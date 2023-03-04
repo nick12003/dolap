@@ -1,14 +1,18 @@
 import Link from 'next/link';
 
 import ThemeSwitch from '@/components/ThemeSwitch';
+import LanguageSwitch from '@/components/LanguageSwitch';
 import CenterWrapper from '@/components/CenterWrapper';
 import Logo from '@/assets/logo.svg';
 import ShoppingCart from '@/assets/shoppingCart.svg';
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-10 border-b border-slate-100/10 bg-gray-100/70 backdrop-blur transition-colors py-3 shadow-lg dark:border-slate-50/[0.06] dark:bg-gray-900/80">
-      <CenterWrapper className="max-w-[1280px] justify-between px-8">
+    <CenterWrapper
+      element={<header />}
+      className="sticky top-0 z-50 border-b border-slate-100/10 bg-gray-100/70 backdrop-blur transition-colors py-3 shadow-lg dark:border-slate-50/[0.06] dark:bg-gray-900/80"
+    >
+      <CenterWrapper className="w-full max-w-[1280px] justify-between px-8">
         <CenterWrapper className="select-none">
           <Link href="/">
             <CenterWrapper>
@@ -18,8 +22,9 @@ const Header = () => {
           </Link>
         </CenterWrapper>
         <CenterWrapper>
-          <ThemeSwitch />
-          <CenterWrapper className="relative w-fit ml-2 cursor-pointer">
+          <LanguageSwitch />
+          <ThemeSwitch className="ml-2" />
+          <CenterWrapper className="relative ml-2 cursor-pointer">
             <ShoppingCart className="w-6 h-6" />
             <CenterWrapper className="absolute -top-[25%] -right-[25%] w-4 h-4 rounded-[50%] text-white text-xs  bg-red-500">
               0
@@ -27,7 +32,7 @@ const Header = () => {
           </CenterWrapper>
         </CenterWrapper>
       </CenterWrapper>
-    </header>
+    </CenterWrapper>
   );
 };
 

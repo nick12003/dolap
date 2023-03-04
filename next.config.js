@@ -1,4 +1,4 @@
-const { i18n } = require("./next-i18next.config");
+const { i18n } = require('./next-i18next.config');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,11 +6,14 @@ const nextConfig = {
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"],
+      use: ['@svgr/webpack'],
     });
     return config;
   },
   i18n,
+  images: {
+    domains: ['drive.google.com'],
+  },
 };
 
 module.exports = nextConfig;

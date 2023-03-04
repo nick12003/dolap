@@ -1,9 +1,12 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
+import classNames from 'classnames';
 
-const ThemeSwitch = () => {
+const ThemeSwitch = ({ className }) => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
+  const { t } = useTranslation(['common']);
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
@@ -14,9 +17,9 @@ const ThemeSwitch = () => {
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="h-7 w-7 rounded transition-colors"
+      className={classNames('h-7 w-7 transition-colors', className)}
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      title={isDark ? '淺色模式' : '深色模式'}
+      title={isDark ? t('LightMode') : t('DarkMode')}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
