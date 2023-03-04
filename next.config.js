@@ -1,5 +1,12 @@
 const { i18n } = require('./next-i18next.config');
 
+function getApiUrl() {
+  if (process.env.VERCEL) {
+    return `${process.env.VERCEL_URL}/api/`;
+  }
+  return process.env.API_URL;
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -15,10 +22,10 @@ const nextConfig = {
     domains: ['drive.google.com'],
   },
   publicRuntimeConfig: {
-    API_URL: process.env.API_URL,
+    API_URL: getApiUrl(),
   },
   serverRuntimeConfig: {
-    API_URL: process.env.API_URL,
+    API_URL: getApiUrl(),
   },
 };
 

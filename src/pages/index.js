@@ -9,10 +9,11 @@ import Image from 'next/image';
 import CenterWrapper from '@/components/CenterWrapper';
 
 export const getStaticProps = async ({ locale }) => {
-  const { publicRuntimeConfig, serverRuntimeConfig } = getConfig();
-  const apiUrl = process.browser ? publicRuntimeConfig.API_URL : serverRuntimeConfig.API_URL;
+  const {
+    publicRuntimeConfig: { API_URL },
+  } = getConfig();
 
-  const res = await fetch(`${apiUrl}/products`);
+  const res = await fetch(`${API_URL}/products`);
   const products = await res.json();
 
   return {
@@ -32,6 +33,7 @@ const Section = ({ children, className, ...rest }) => (
 export default function Home({ products }) {
   const { t } = useTranslation(['common']);
   const { locale } = useRouter();
+
   return (
     <CenterWrapper direction="vertical">
       <CenterWrapper
@@ -40,7 +42,7 @@ export default function Home({ products }) {
       >
         <CenterWrapper className="h-full w-full px-6 max-w-[1280px] relative">
           <div className="h-[80%] w-1/2 max-w-xl absolute right-[1.5rem]">
-            <div className="absolute bg-[url('https://drive.google.com/uc?export=view&id=1sQhooFiwFj37WN58OoZGPQEgKuiHQ6F0')] bg-contain bg-no-repeat opacity-70 w-[350px] h-[350px]" />
+            <div className="absolute bg-[url('https://drive.google.com/uc?export=view&id=1P4M6EUY7sKA7IbNBBXu02p7ht5ondG9j')] bg-contain bg-no-repeat opacity-70 w-[350px] h-[350px]" />
             <div className="max-w-xs absolute right-0 bottom-0">
               <h6 className="text-lg font-semibold text-right">{t('PopularDescTitle')}</h6>
               <p className="text-gray-700/60 dark:text-gray-300">{t('PopularDesc')}</p>
@@ -53,7 +55,10 @@ export default function Home({ products }) {
               {t('Lophophora_fricii')}
             </h1>
             <div className="mt-12 select-none">
-              <Link className="p-4 rounded-xl bg-primary text-white hover:bg-primary/50" href="">
+              <Link
+                className="p-4 rounded-xl bg-primary text-white hover:bg-primary/50"
+                href="/product/1"
+              >
                 {t('BuyPopular')}
               </Link>
             </div>
@@ -66,8 +71,12 @@ export default function Home({ products }) {
           <p className="text-gray-700/60 dark:text-gray-300">{t('ProductsDesc')}</p>
         </CenterWrapper>
         <div className="w-full my-4 grid justify-between grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4">
-          {products?.map(({ pid, imgUrl, ...other }) => (
-            <div key={pid} className="p-2  hover:scale-110 duration-150 cursor-pointer">
+          {products.map(({ pid, imgUrl, ...other }) => (
+            <Link
+              key={pid}
+              className="p-2 hover:scale-110 duration-150 cursor-pointer"
+              href={`/product/${pid}`}
+            >
               <Image
                 className="w-full bg-slate-300/50 rounded-xl"
                 width={250}
@@ -77,7 +86,7 @@ export default function Home({ products }) {
               />
               <h6 className="font-semibold dark:text-white">{other?.[locale].name}</h6>
               <div className="font-black font-fat">{`${other?.[locale].unit} ${other?.[locale].price}`}</div>
-            </div>
+            </Link>
           ))}
         </div>
       </Section>

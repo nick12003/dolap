@@ -1,156 +1,277 @@
 const productsData = [
   {
     pid: 1,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1u1n6o4H1eFSlfGKpWpkhYd9uwvKiPbev',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=1sHSbmIy8Tz96J4P_J9BjMp8qYvuM_pIG',
+    rating: 4,
     en: {
       name: 'Lophophora fricii',
       price: 15.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '銀冠玉',
       price: 500,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
   {
     pid: 2,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1C9YfzUfPbVKZOAWH3VpcNpMSXZdTkK_U',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=1sF_Gu_qzEzZeu3Wu04qxpaiFyNAShmBI',
+    rating: 4,
     en: {
       name: 'Astrophytum myriostigma',
       price: 10.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '鸞鳳玉',
       price: 350,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
   {
     pid: 3,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1waKdEwXQvjg6JfSONtXLs8QVGffBnV9f',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=10aZC7KTpmVBD2OH2q7Pq3rFg04a_CeQ3',
+    rating: 3,
     en: {
       name: 'Christmas Cactus',
       price: 5.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '螃蟹蘭',
       price: 150,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
   {
     pid: 4,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1UH1TJ5oH1aJ8LvGDD7BlSTCjND5ReBwO',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=1lT85mJ_VeJ6eVKP27jomMJFUWJvjCwrK',
+    rating: 3,
     en: {
       name: 'Echinopsis oxygona',
       price: 12.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '短毛丸',
       price: 400,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
   {
     pid: 5,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1riftFGxrKnfREJqBQlO9bC83ZC5KedQf',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=1HwuiRF_bp6KfyqJEs2WOCnm7FxsfOg5F',
+    rating: 5,
     en: {
       name: 'Stenocereus pruinosus',
       price: 8.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '朝霧閣',
       price: 250,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
   {
     pid: 6,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1NRoYt5Wa_wo1MVB48esUmYTQ2BJLK1a0',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=1E6QjewURqXBI8NHMPhKzdUWjaeNV_sMx',
+    rating: 2,
     en: {
       name: 'Mammillaria elongata',
       price: 2.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '金手指',
       price: 80,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
   {
     pid: 7,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1BRKHFbvXEDTaDihQv74b-38gNlwBPmPq',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=1eTbBnjdGIXhNUKTnwL8sJMxXYp40lIYB',
+    rating: 2,
     en: {
       name: 'Echinopsis Calochlora',
       price: 8.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '金盛丸',
       price: 250,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
   {
     pid: 8,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1BHI4AjGaNfeYM-SewF6YNsWiAJS-ejEP',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=1hljBT8IxnBHUzJ8HV-nFSEHIFYvTS6WK',
+    rating: 4,
     en: {
       name: 'Mammillaria duwei',
       price: 13.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '杜威丸',
       price: 400,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
   {
     pid: 9,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1fohQm0PEP3e3tk30u9sdq4TBDbFOXkXU',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=14QN7wfshAyCfXOoQCfTqJb9CnB4THZOY',
+    rating: 4,
     en: {
       name: 'Bunny ear cactus',
       price: 3.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '白烏帽子',
       price: 100,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
   {
     pid: 10,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1IvhNt_wHJ1SD2T4cKvRAJ-zn2QnlTssM',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=1yiV270E7wlXnzgkQX8q90mE3TieDUlPn',
+    rating: 5,
     en: {
       name: 'Titty Cactus',
       price: 1.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '玉乳柱',
       price: 40,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
   {
     pid: 11,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1H_7sJwelhSG5RPhUwCxKKZldNPPwiOi1',
+    imgUrl: 'https://drive.google.com/uc?export=view&id=1qeKE7dWo4u7xWS8dW_ji1EACznSeSYik',
+    rating: 3,
     en: {
       name: 'Parodia scopa',
       price: 1.99,
       unit: '$',
+      desc: [
+        'We cannot suggest how often to water plants because it depends on various factors such as light, ventilation, and humidity in your growing environment. You must observe and determine the watering frequency that is suitable for your own environment.',
+        'Assuming that the weight of a plant pot before watering is 400g and the weight after the water has dried overnight is 550g, you can determine that the medium can hold approximately 150g of water. By weighing the pot a few times, you can determine how long it takes for the medium to dry completely and then establish a suitable watering frequency for your plant.',
+        'For summer-type plants, it is recommended to water thoroughly when the medium is completely dry in summer and to extend the watering interval in autumn and winter, giving water only after the soil has dried out for 1-2 weeks. Conversely, for winter-type plants, it is recommended to extend the watering interval in summer and water thoroughly when the soil is completely dry in autumn and winter.',
+      ],
     },
     'zh-TW': {
       name: '小町',
       price: 50,
       unit: 'NT',
+      desc: [
+        '我們無法建議植株幾天澆一次水適合，因為這取決於您的種植環境的光照、通風度、濕度等等。必須由您親自觀察並結論適合自己環境的澆水頻率。',
+        '一般來說假設澆水前一盆植株的重量是400g，澆水後滴乾水一晚後測量是550g，就可以判定介質吸水的空間約150g，往後只要秤重就知道植株幾天後介質會全乾，紀錄2-3次後就能得到適合自己的澆水頻率了。',
+        '若是夏型種就建議夏天介質乾透就澆透，秋冬天氣轉涼後就延長澆水時間，土乾透1-2周後再給水。反之，冬型種夏天就要延長澆水時間，秋冬則是乾透澆透。',
+      ],
     },
   },
 ];

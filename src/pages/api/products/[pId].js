@@ -1,6 +1,8 @@
 import products from '@/lib/data';
 
-export default function handler(_, res) {
+export default function handler(req, res) {
   const { pid } = req.query;
-  res.status(200).json({ result: products.filter((product) => product.pid === pid) });
+  res
+    .status(200)
+    .json({ result: products.filter((product) => product.pid.toString() === pid)?.[0] });
 }

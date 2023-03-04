@@ -8,10 +8,10 @@ const Footer = () => {
       <div className="h-full flex flex-col items-center justify-center">
         <div className="mb-3 flex space-x-4">
           <Link href="/">
-            <Facebook className="hover:text-[#4267B2]" />
+            <Facebook className="h-8 w-8 hover:text-[#4267B2]" />
           </Link>
           <Link href="/">
-            <Instagram className="hover:text-[#f6005e]" />
+            <Instagram className="h-8 w-8 hover:text-[#f6005e]" />
           </Link>
         </div>
         <div className="flex space-x-2 text-sm text-gray-500">

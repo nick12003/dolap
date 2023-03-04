@@ -16,6 +16,9 @@ const myUtilities = plugin(function ({ addUtilities }) {
         display: 'none',
       },
     },
+    '.animate-paused': {
+      'animation-play-state': 'paused',
+    },
   });
 });
 
@@ -30,6 +33,15 @@ module.exports = {
           DEFAULT: '#2f4f4f',
           dark: '#0a2a2a',
         },
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 20s linear infinite',
       },
     },
     fontFamily: {
