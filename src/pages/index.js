@@ -1,5 +1,7 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
+import getConfig from 'next/config';
 import classNames from 'classnames';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,9 +9,16 @@ import Image from 'next/image';
 import CenterWrapper from '@/components/CenterWrapper';
 
 export const getStaticProps = async ({ locale }) => {
+  const { publicRuntimeConfig, serverRuntimeConfig } = getConfig();
+  const apiUrl = process.browser ? publicRuntimeConfig.API_URL : serverRuntimeConfig.API_URL;
+
+  const res = await fetch(`${apiUrl}/products`);
+  const products = await res.json();
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
+      products: products.result,
     },
   };
 };
@@ -20,8 +29,9 @@ const Section = ({ children, className, ...rest }) => (
   </CenterWrapper>
 );
 
-export default function Home() {
+export default function Home({ products }) {
   const { t } = useTranslation(['common']);
+  const { locale } = useRouter();
   return (
     <CenterWrapper direction="vertical">
       <CenterWrapper
@@ -52,31 +62,23 @@ export default function Home() {
       </CenterWrapper>
       <Section className="py-8" direction="vertical">
         <CenterWrapper className="my-2" direction="vertical">
-          <h2 className="my-2 text-4xl font-fat">我們的產品</h2>
-          <p className="text-gray-700/60 dark:text-gray-300">
-            本店採用最先進蟲洞技術運送，讓您的商品跟剛從產地回來一樣
-          </p>
+          <h2 className="my-2 text-4xl font-fat">{t('ProductsTitle')}</h2>
+          <p className="text-gray-700/60 dark:text-gray-300">{t('ProductsDesc')}</p>
         </CenterWrapper>
         <div className="w-full my-4 grid justify-between grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4">
-          {Array(10)
-            .fill({})
-            .map((_, i) => (
-              <div
-                key={i}
-                className="p-2 hover:scale-110 duration-150 cursor-pointer"
-                direction="vertical"
-              >
-                <Image
-                  className="w-full bg-slate-300/50 rounded-xl"
-                  width={250}
-                  height={250}
-                  src="https://drive.google.com/uc?export=view&id=1sQhooFiwFj37WN58OoZGPQEgKuiHQ6F0"
-                  alt="product"
-                />
-                <h6 className="font-semibold dark:text-white">淫慾冠</h6>
-                <div className="font-black font-fat">$56</div>
-              </div>
-            ))}
+          {products?.map(({ pid, imgUrl, ...other }) => (
+            <div key={pid} className="p-2  hover:scale-110 duration-150 cursor-pointer">
+              <Image
+                className="w-full bg-slate-300/50 rounded-xl"
+                width={250}
+                height={250}
+                src={imgUrl}
+                alt="product"
+              />
+              <h6 className="font-semibold dark:text-white">{other?.[locale].name}</h6>
+              <div className="font-black font-fat">{`${other?.[locale].unit} ${other?.[locale].price}`}</div>
+            </div>
+          ))}
         </div>
       </Section>
     </CenterWrapper>
