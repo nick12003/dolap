@@ -1,7 +1,7 @@
 const productsData = [
   {
     pid: 1,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1sHSbmIy8Tz96J4P_J9BjMp8qYvuM_pIG',
+    imgUrl: '/images/Lophophora fricii.jpg',
     rating: 4,
     en: {
       name: 'Lophophora fricii',
@@ -24,7 +24,7 @@ const productsData = [
   },
   {
     pid: 2,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1sF_Gu_qzEzZeu3Wu04qxpaiFyNAShmBI',
+    imgUrl: '/images/Astrophytum myriostigma.jpg',
     rating: 4,
     en: {
       name: 'Astrophytum myriostigma',
@@ -47,7 +47,7 @@ const productsData = [
   },
   {
     pid: 3,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=10aZC7KTpmVBD2OH2q7Pq3rFg04a_CeQ3',
+    imgUrl: '/images/Christmas Cactus.jpg',
     rating: 3,
     en: {
       name: 'Christmas Cactus',
@@ -70,7 +70,7 @@ const productsData = [
   },
   {
     pid: 4,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1lT85mJ_VeJ6eVKP27jomMJFUWJvjCwrK',
+    imgUrl: '/images/Echinopsis oxygona.jpg',
     rating: 3,
     en: {
       name: 'Echinopsis oxygona',
@@ -93,7 +93,7 @@ const productsData = [
   },
   {
     pid: 5,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1HwuiRF_bp6KfyqJEs2WOCnm7FxsfOg5F',
+    imgUrl: '/images/Stenocereus pruinosus.jpg',
     rating: 5,
     en: {
       name: 'Stenocereus pruinosus',
@@ -116,7 +116,7 @@ const productsData = [
   },
   {
     pid: 6,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1E6QjewURqXBI8NHMPhKzdUWjaeNV_sMx',
+    imgUrl: '/images/Mammillaria elongata.jpg',
     rating: 2,
     en: {
       name: 'Mammillaria elongata',
@@ -139,7 +139,7 @@ const productsData = [
   },
   {
     pid: 7,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1eTbBnjdGIXhNUKTnwL8sJMxXYp40lIYB',
+    imgUrl: '/images/Echinopsis Calochlora.jpg',
     rating: 2,
     en: {
       name: 'Echinopsis Calochlora',
@@ -162,7 +162,7 @@ const productsData = [
   },
   {
     pid: 8,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1hljBT8IxnBHUzJ8HV-nFSEHIFYvTS6WK',
+    imgUrl: '/images/Mammillaria duwei.jpg',
     rating: 4,
     en: {
       name: 'Mammillaria duwei',
@@ -185,7 +185,7 @@ const productsData = [
   },
   {
     pid: 9,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=14QN7wfshAyCfXOoQCfTqJb9CnB4THZOY',
+    imgUrl: '/images/Bunny ear cactus.jpg',
     rating: 4,
     en: {
       name: 'Bunny ear cactus',
@@ -208,7 +208,7 @@ const productsData = [
   },
   {
     pid: 10,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1yiV270E7wlXnzgkQX8q90mE3TieDUlPn',
+    imgUrl: '/images/Titty Cactus.jpg',
     rating: 5,
     en: {
       name: 'Titty Cactus',
@@ -231,7 +231,7 @@ const productsData = [
   },
   {
     pid: 11,
-    imgUrl: 'https://drive.google.com/uc?export=view&id=1qeKE7dWo4u7xWS8dW_ji1EACznSeSYik',
+    imgUrl: '/images/Parodia scopa.jpg',
     rating: 3,
     en: {
       name: 'Parodia scopa',
