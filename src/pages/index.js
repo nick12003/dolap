@@ -3,10 +3,10 @@ import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import getConfig from 'next/config';
 import classNames from 'classnames';
-import Link from 'next/link';
-import Image from 'next/image';
 
 import CenterWrapper from '@/components/CenterWrapper';
+import Button from '@/components/Button';
+import ProductCard from '@/components/ProductCard';
 
 export const getStaticProps = async ({ locale }) => {
   const {
@@ -32,7 +32,7 @@ const Section = ({ children, className, ...rest }) => (
 
 export default function Home({ products }) {
   const { t } = useTranslation(['common']);
-  const { locale } = useRouter();
+  const { locale, push } = useRouter();
 
   return (
     <CenterWrapper direction="vertical">
@@ -55,12 +55,15 @@ export default function Home({ products }) {
               {t('Lophophora_fricii')}
             </h1>
             <div className="mt-12 select-none">
-              <Link
-                className="p-4 rounded-xl bg-primary text-white hover:bg-primary/50"
-                href="/product/1"
+              <Button
+                className="px-6 py-4"
+                primary
+                onClick={() => {
+                  push('/product/1');
+                }}
               >
                 {t('BuyPopular')}
-              </Link>
+              </Button>
             </div>
           </div>
         </CenterWrapper>
@@ -72,21 +75,13 @@ export default function Home({ products }) {
         </CenterWrapper>
         <div className="w-full my-4 grid justify-between grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4">
           {products.map(({ pid, imgUrl, ...other }) => (
-            <Link
+            <ProductCard
               key={pid}
-              className="p-2 hover:scale-110 duration-150 cursor-pointer"
+              className="p-2"
+              imgUrl={imgUrl}
               href={`/product/${pid}`}
-            >
-              <Image
-                className="w-full bg-slate-300/50 rounded-xl"
-                width={250}
-                height={250}
-                src={imgUrl}
-                alt="product"
-              />
-              <h6 className="font-semibold dark:text-white">{other?.[locale].name}</h6>
-              <div className="font-black font-fat">{`${other?.[locale].unit} ${other?.[locale].price}`}</div>
-            </Link>
+              {...other[locale]}
+            />
           ))}
         </div>
       </Section>

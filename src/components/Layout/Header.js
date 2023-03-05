@@ -1,12 +1,15 @@
 import Link from 'next/link';
-
+import { useSelector } from 'react-redux';
 import ThemeSwitch from '@/components/ThemeSwitch';
 import LanguageSwitch from '@/components/LanguageSwitch';
 import CenterWrapper from '@/components/CenterWrapper';
 import Logo from '@/assets/logo.svg';
 import ShoppingCart from '@/assets/shoppingCart.svg';
 
-const Header = () => {
+const Header = ({ openCart }) => {
+  const quantity = useSelector((state) =>
+    state.cart.list.reduce((acc, cur) => acc + cur.quantity, 0)
+  );
   return (
     <CenterWrapper
       element={<header />}
@@ -25,9 +28,9 @@ const Header = () => {
           <LanguageSwitch />
           <ThemeSwitch className="ml-2" />
           <CenterWrapper className="relative ml-2 cursor-pointer">
-            <ShoppingCart className="w-6 h-6" />
-            <CenterWrapper className="absolute -top-[25%] -right-[25%] w-4 h-4 rounded-[50%] text-white text-xs  bg-red-500">
-              0
+            <ShoppingCart className="w-6 h-6" onClick={openCart} />
+            <CenterWrapper className="absolute -top-[25%] -right-[25%] w-4 h-4 rounded-[50%] text-white text-xs  bg-red-500 pointer-events-none select-none">
+              {quantity}
             </CenterWrapper>
           </CenterWrapper>
         </CenterWrapper>

@@ -1,4 +1,4 @@
-import products from '@/lib/data';
+import products from '@/dataBase';
 
 export default function handler(req, res) {
   const { pid } = req.query;

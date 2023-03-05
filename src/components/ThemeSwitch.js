@@ -19,7 +19,6 @@ const ThemeSwitch = ({ className }) => {
       type="button"
       className={classNames('h-7 w-7 transition-colors', className)}
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      title={isDark ? t('LightMode') : t('DarkMode')}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
