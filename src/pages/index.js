@@ -1,25 +1,26 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import getConfig from 'next/config';
+// import getConfig from 'next/config';
 import classNames from 'classnames';
 
 import CenterWrapper from '@/components/CenterWrapper';
 import Button from '@/components/Button';
 import ProductCard from '@/components/ProductCard';
+import products from '@/dataBase';
 
 export const getStaticProps = async ({ locale }) => {
-  const {
-    publicRuntimeConfig: { API_URL },
-  } = getConfig();
+  // const {
+  //   publicRuntimeConfig: { API_URL },
+  // } = getConfig();
 
-  const res = await fetch(`${API_URL}/products`);
-  const products = await res.json();
+  // const res = await fetch(`${API_URL}/products`);
+  // const products = await res.json();
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
-      products: products.result,
+      products,
     },
   };
 };

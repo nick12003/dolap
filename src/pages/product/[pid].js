@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import getConfig from 'next/config';
+// import getConfig from 'next/config';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ProductJsonLd } from 'next-seo';
@@ -28,19 +28,19 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ locale, params: { pid } }) => {
-  const {
+  /* const {
     publicRuntimeConfig: { API_URL },
   } = getConfig();
   const res = await fetch(`${API_URL}/products/${pid}`);
   const product = await res.json();
   const res2 = await fetch(`${API_URL}/products`);
-  const products = await res2.json();
+  const products = await res2.json(); */
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
-      product: product.result,
-      products: products.result,
+      product: products.find((product) => product.pid.toString() === pid),
+      products,
     },
   };
 };
