@@ -23,7 +23,7 @@ import RegStar from '@/assets/reg_star.svg';
 export const getStaticPaths = async () => {
   return {
     paths: products.map(({ pid }) => ({ params: { pid: pid.toString() } })),
-    fallback: 'blocking',
+    fallback: false,
   };
 };
 
