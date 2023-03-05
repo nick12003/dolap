@@ -2,7 +2,7 @@ const { i18n } = require('./next-i18next.config');
 
 function getApiUrl() {
   if (process.env.VERCEL) {
-    return `${process.env.VERCEL_URL}/api/`;
+    return `${process.env.VERCEL_URL}/api`;
   }
   return process.env.API_URL;
 }
